@@ -1,0 +1,4 @@
+
+
+//AppRegistry.registerComponent(appName, () =>Home );
+

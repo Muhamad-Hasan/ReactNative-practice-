@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var nums = [2 ,6 , 5, 6, 5, 9 , 1];
+     function getLargestNumber(nums){
+         nums.sort();
+         var large = nums[nums.length-1];
+         console.log(nums);
+        nums.forEach((item ,index)=>{
+            console.log(item);
+            if(large == item){
+                nums.splice(index,index+1);      
+                console.log("index "+index+" "+item);
+
+        }
+            
+        })     
+        large = nums[nums.length-1];
+        console.log(nums)
+        return "Second Largest Number " +large;
+    }
+     var s = "a";
+     function checkVowel(f,s){
+        var vowel = ['a' , 'e' , 'i' ,'o','u'];
+        var check = false;
+        vowel.forEach((item ,index)=>{
+            if(item == f && item == s ){
+                check = true;
+            }
+        })
+        console.log(check);
+        return check;
+    } 
+    function checkString(s){
+        var l = s.length;
+        var first = s.slice(0,1);
+        var second = s.slice(l-1);
+        checkVowel(first,second);
+
+    }
+    //checkString(s);
+    var pairs =[10 ,10, 20 , 9 , 20 ,9, 20 ,9  ,9 ,9 ];
+    // 10  10 20 20 20 7 8 9 9 
+    function socksSold(pairs){
+        pairs.sort();
+        console.log(pairs);
+        var num = 0;
+        var freq=0;
+        var newArray =[];
+        pairs.forEach((item ,index)=>{
+         
+
+            if(item == pairs[index+1]){
+                freq++;
+                newArray.push(item);
+                console.log("first "+item);
+                newArray.push(pairs[index+1]);
+                console.log("second "+ pairs[index+1]);
+                console.log("new  array "+newArray);  
+                pairs.splice(index ,index+2);
+                
+                console.log("same"+item);
+                //console.log(item +' '+pairs[index+1]);
+                //pairs.splice(index-1,index)
+                //num++;
+            }
+        else{
+            freq =0;
+        }
+        console.log(pairs);
+        
+        console.log(newArray);
+        })
+        //
+    return num;
+    }
+    console.log(socksSold(pairs));
+    </script>       
+</body>
+</html>
